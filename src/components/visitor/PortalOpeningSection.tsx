@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export const PortalOpeningSection: React.FC = () => {
@@ -21,12 +22,13 @@ export const PortalOpeningSection: React.FC = () => {
   const rightTitleX = useTransform(scrollYProgress, [0.15, 0.65], ["0%", "40%"]);
 
   // Wordmark scale and letter spacing
-  const wordmarkScale = useTransform(scrollYProgress, [0.15, 0.7], [0.9, 1.25]);
+  const wordmarkScale = useTransform(scrollYProgress, [0.15, 0.7], [0.9, 1.2]);
   const wordmarkTracking = useTransform(scrollYProgress, [0.15, 0.7], ["0.35em", "0.05em"]);
+  const wordmarkOpacity = useTransform(scrollYProgress, [0.15, 0.5, 0.65], [1, 0.8, 0]);
 
   // Background reveal opacity & zoom
   const bgOpacity = useTransform(scrollYProgress, [0.2, 0.6], [0.3, 1]);
-  const bgScale = useTransform(scrollYProgress, [0.15, 0.8], [1.15, 1.0]);
+  const bgScale = useTransform(scrollYProgress, [0.15, 0.8], [1.12, 1.0]);
 
   return (
     <div
@@ -35,23 +37,37 @@ export const PortalOpeningSection: React.FC = () => {
     >
       {/* Sticky viewport frame */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        {/* Background Revealed Stage */}
+        {/* Background Revealed Stage (Cinematic Photography) */}
         <motion.div
           style={{ opacity: bgOpacity, scale: bgScale }}
-          className="absolute inset-0 flex items-center justify-center bg-[#07080a]"
+          className="absolute inset-0 flex items-center justify-center bg-[#07080a] overflow-hidden"
         >
-          {/* Subtle architectural grid & artistic backdrop */}
-          <div className="absolute inset-0 bg-[radial-gradient(#2E6B72_1px,transparent_1px)] [background-size:32px_32px] opacity-20" />
-          <div className="relative text-center px-6 max-w-3xl z-10">
-            <span className="text-amber text-xs font-mono uppercase tracking-[0.3em]">
+          {/* Full-bleed Cinematic Exhibition Photograph */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/portal-reveal.jpg"
+              alt="Live Exhibition Collective Memory Gallery"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            {/* Cinematic subtle ambient lighting & vignettes */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0C0E] via-transparent to-[#0A0C0E]/70" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0C0E]/80 via-transparent to-[#0A0C0E]/80" />
+            <div className="absolute inset-0 bg-[#0A0C0E]/20" />
+          </div>
+
+          {/* Minimal Elegant Exhibition Caption */}
+          <div className="relative z-10 text-center px-6 mt-auto mb-20 max-w-lg bg-[#0A0C0E]/85 border border-hairline py-3.5 px-6 backdrop-blur-md shadow-2xl">
+            <span className="text-amber text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] block">
               [ ARCHIVE REVEALED ]
             </span>
-            <h3 className="font-syne text-3xl sm:text-4xl md:text-5xl font-bold text-primary-text mt-3 mb-4">
+            <h3 className="font-syne text-sm sm:text-base font-bold text-primary-text tracking-wide mt-1">
               A Living Collective Memory
             </h3>
-            <p className="text-secondary-text text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Every captured frame enters the permanent gallery stream. As you enter, the physical display adapts
-              to celebrate your presence.
+            <p className="text-secondary-text text-xs mt-1 leading-relaxed">
+              Every captured frame enters the permanent gallery stream.
             </p>
           </div>
         </motion.div>
@@ -80,24 +96,25 @@ export const PortalOpeningSection: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Centered Wordmark Emblem that scales up and tightens */}
+        {/* Centered Wordmark Emblem that fades out gracefully as the portal opens */}
         <motion.div
           style={{
             scale: wordmarkScale,
             letterSpacing: wordmarkTracking,
+            opacity: wordmarkOpacity,
           }}
           className="relative z-30 pointer-events-none text-center"
         >
-          <div className="bg-[#0A0C0E]/90 border border-hairline px-6 py-2 backdrop-blur-md">
-            <span className="font-syne text-xs sm:text-sm uppercase font-bold text-amber">
+          <div className="bg-[#0A0C0E]/90 border border-hairline px-6 py-2.5 backdrop-blur-md shadow-xl">
+            <span className="font-syne text-xs sm:text-sm uppercase font-bold text-amber tracking-wider">
               PORTAL ACCESS
             </span>
           </div>
         </motion.div>
 
         {/* Scroll status prompt */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 text-[11px] uppercase tracking-[0.25em] text-muted flex items-center space-x-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal" />
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 text-[11px] uppercase tracking-[0.25em] text-muted flex items-center space-x-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
           <span>Scroll to Unlock Portal</span>
         </div>
       </div>
