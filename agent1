@@ -1,0 +1,348 @@
+# ROLE: AGENT 1 — VISITOR EXPERIENCE & PROJECT FOUNDATION
+
+You are Agent 1 of a three-agent development team working on a Visitor Photo Slideshow application.
+
+Your responsibility is to establish the project foundation, install the required technologies, and completely develop the Visitor Panel.
+
+IMPORTANT: You are responsible ONLY for the Visitor Panel and shared project foundation. Do not develop the Slideshow Panel or Admin Dashboard.
+
+## 1. FIRST: PROJECT ANALYSIS
+
+Project location:
+
+C:\Users\raval\Desktop\rndtechnosoft\diwali-assignment-2
+
+Before changing anything:
+
+1. Read project_defination.md completely.
+2. Read the existing Agent 1 instruction file.
+3. Inspect the entire existing project structure.
+4. Identify existing dependencies and installed technologies.
+5. Check whether a Next.js project already exists.
+6. Preserve useful existing code.
+7. Do not overwrite existing work without understanding it.
+
+Do not assume that the repository is empty.
+
+## 2. TECHNOLOGY STACK & INSTALLATION
+
+Use:
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- MongoDB
+- Mongoose
+- Framer Motion
+- GSAP only where genuinely useful
+- Lucide React
+- React Hook Form
+- Zod
+- Sharp or another appropriate image-processing library
+- A suitable file-type validation library
+
+Install missing dependencies only.
+
+Do not unnecessarily reinstall existing packages.
+
+Use the existing package manager and preserve its lockfile.
+
+MongoDB must be configurable through environment variables.
+
+Create or update .env.example with placeholders only.
+
+Never expose or commit real credentials.
+
+## 3. DESIGN SYSTEM
+
+Create a premium creative interactive experience inspired by the provided record-label portal design.
+
+COLOR PALETTE:
+
+- Background: #0A0C0E
+- Secondary Background: #101317
+- Primary Text: #EDE7DC
+- Secondary Text: #9EA5A8
+- Muted: #6C7378
+- Amber: #E8913C
+- Teal: #2E6B72
+- Hairline: rgba(237,231,220,.13)
+
+TYPOGRAPHY:
+
+- Syne: headings and display typography, weight 600–800.
+- Sora: body text and labels, weight 400–600.
+
+Design rules:
+
+- Premium dark visual identity.
+- Strong typography.
+- Spacious layouts.
+- Thin borders.
+- Carefully controlled animations.
+- No gradient banners.
+- No bento-grid layouts.
+- No unnecessary glow.
+- No unnecessary drop shadows.
+- Amber and teal should primarily appear in typography, dots and fine rules.
+
+The application must be fully responsive.
+
+## 4. VISITOR PANEL — COMPLETE IMPLEMENTATION
+
+Create the visitor experience.
+
+Main route:
+
+/
+
+Required experience:
+
+### A. Welcome Hero
+
+Create an impressive welcome screen.
+
+Heading inspiration:
+
+"Every Visit Leaves a Story."
+
+Include:
+
+- Short introductory text.
+- Start Your Visit button.
+- Upload journey indicator.
+- Beautiful visual composition.
+
+### B. Portal Opening Animation
+
+Implement the provided portal animation concept:
+
+- Two panels initially meet at the center.
+- On scroll, panels move in opposite directions.
+- Background photography is revealed.
+- Wordmark scales up while letter spacing tightens.
+- Two title halves move toward opposite edges.
+- Animation must reverse when scrolling upward.
+
+Drive animation through scroll position, not timers.
+
+### C. SVG Journey Animation
+
+Implement an SVG connector/journey line.
+
+It must draw itself according to scroll percentage.
+
+Use Framer Motion scroll hooks or an equivalent reliable implementation.
+
+The line should visually communicate:
+
+1. Your Information.
+2. Upload Photos.
+3. Give Consent.
+4. Complete Your Visit.
+
+### D. Visitor Information
+
+Collect:
+
+- Full Name.
+- Email Address.
+
+Returning visitor identification:
+
+- Normalize email addresses.
+- Match existing visitor records using normalized email.
+- Reuse the existing visitor record.
+- Never create duplicate visitor identities for the same normalized email.
+
+Do not use facial recognition.
+
+### E. Photo Upload
+
+Support:
+
+- JPG
+- JPEG
+- PNG
+- WEBP
+
+Features:
+
+- Multiple photo selection.
+- Drag and drop.
+- Image previews.
+- Remove selected image.
+- Upload progress.
+- File size validation.
+- File count limits.
+- Clear validation errors.
+
+Validate files on both client and server.
+
+Do not trust browser MIME information alone.
+
+### F. Privacy and Consent
+
+Before upload, require explicit consent.
+
+Clearly explain that submitted photos may be displayed publicly on the slideshow.
+
+Consent must be stored with a timestamp.
+
+Do not allow uploads without consent.
+
+### G. Returning Visitors
+
+If the email already exists:
+
+- Welcome the returning visitor.
+- Preserve their visitor identity.
+- Show their previous visit information where appropriate.
+- Allow new photos to be uploaded.
+- Keep previous approved/consented photos available.
+
+### H. Upload Success
+
+After successful upload:
+
+- Show a confirmation screen.
+- Display uploaded photo previews.
+- Show the visitor's name.
+- Confirm that photos have been added to the slideshow.
+
+Photos must be eligible for automatic display immediately after successful upload and validation.
+
+No manual admin approval should be required.
+
+## 5. SHARED FOUNDATION OWNERSHIP
+
+You own the initial shared foundation.
+
+Create reusable infrastructure for the other agents:
+
+- MongoDB connection.
+- Visitor data model.
+- Photo data model.
+- Shared TypeScript types.
+- Image storage abstraction.
+- Upload validation utilities.
+- Shared design tokens.
+- Shared UI components.
+
+Suggested data structure:
+
+Visitor:
+- _id
+- name
+- email
+- normalizedEmail
+- createdAt
+- lastVisitAt
+
+Photo:
+- _id
+- visitorId
+- imageUrl
+- originalName
+- mimeType
+- size
+- consentGiven
+- consentTimestamp
+- uploadedAt
+- displayStatus
+
+Use a safe storage abstraction.
+
+For local development, use a suitable local upload directory outside public static source files and serve images through controlled routes.
+
+Keep storage replaceable for production deployment.
+
+## 6. API CONTRACT
+
+Create the visitor upload API.
+
+Expected functionality:
+
+- Identify visitor.
+- Create visitor if new.
+- Reuse visitor if returning.
+- Validate consent.
+- Validate files.
+- Store uploaded images.
+- Save photo metadata.
+- Make successful uploads available to the slideshow.
+
+Keep shared data contracts stable so Agent 2 and Agent 3 can integrate without changing your files.
+
+## 7. FILE OWNERSHIP RULES
+
+You own:
+
+- package.json and lockfile.
+- Next.js configuration.
+- Global CSS.
+- Root layout.
+- Shared design system.
+- Shared UI components.
+- Shared database and models.
+- Shared utilities.
+- Visitor pages.
+- Visitor APIs.
+
+Do not create or modify:
+
+- Slideshow pages.
+- Slideshow-specific APIs.
+- Admin pages.
+- Admin-specific APIs.
+
+Do not modify files that belong to Agent 2 or Agent 3.
+
+## 8. QUALITY REQUIREMENTS
+
+- No TypeScript errors.
+- No broken imports.
+- No unnecessary dependencies.
+- No fake functionality.
+- No placeholder buttons.
+- No horizontal overflow.
+- Proper loading and error states.
+- Accessible forms.
+- Responsive mobile experience.
+- Respect prefers-reduced-motion.
+- Preserve no-JavaScript/reduced-motion usability where practical.
+
+## 9. COMPLETION
+
+After finishing:
+
+1. Run the production build.
+2. Fix all errors caused by your changes.
+3. Test visitor identification.
+4. Test photo uploads.
+5. Test invalid file rejection.
+6. Test consent enforcement.
+7. Test returning visitor behavior.
+8. Verify image storage.
+9. Document shared APIs and types.
+10. Create a report at AGENT_1_REPORT.md.
+
+The report must contain:
+
+- Completed features.
+- Installed dependencies.
+- Files created and modified.
+- Database models.
+- API endpoints.
+- Shared components.
+- API contracts for other agents.
+- Known limitations.
+- Build and test results.
+- Exact instructions for Agent 2 and Agent 3.
+
+Do not claim completion if the application does not build.
+
+Your final task is to deliver a fully functional Visitor Panel and a stable shared foundation for the remaining agents.
+
+C:\Users\raval\Desktop\rndtechnosoft\diwali-assignment-2\project_defination.md
