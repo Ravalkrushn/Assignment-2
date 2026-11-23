@@ -23,7 +23,8 @@ Designed and crafted using a bespoke record-label visual identity featuring dark
 The application is structured into specialized panels across a modular architecture:
 1. **Visitor Experience (`/`)**: Welcome hero, portal opening scroll experience, SVG interactive journey timeline, returning visitor identity lookup, multi-photo drag-and-drop uploader with live preview, explicit public-broadcast consent, and instant submission confirmation.
 2. **Smart TV Slideshow (`/display`)**: Autonomous full-screen kiosk display for smart TVs and large monitors that loops visitor photos with smooth transitions and live polling updates without page refreshes.
-3. **Media Streaming (`/api/media/[filename]`)**: Controlled, cached binary media route serving uploaded photos with directory-traversal prevention.
+3. **Admin Dashboard (`/admin`)**: Secure, authenticated administration console featuring real-time overview metrics, 7-day upload activity chart, audience directory with full visit histories, photo moderation gallery with one-click deletion and Smart TV purge, persistent slideshow configuration (duration, transitions, framing), and consent compliance audit logs.
+4. **Media Streaming (`/api/media/[filename]`)**: Controlled, cached binary media route serving uploaded photos with directory-traversal prevention.
 
 ---
 
@@ -54,6 +55,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **Visitor Experience**: [http://localhost:3000](http://localhost:3000)
 - **Slideshow Display**: [http://localhost:3000/display](http://localhost:3000/display)
+- **Admin Console**: [http://localhost:3000/admin](http://localhost:3000/admin) *(Default evaluation password: `AdminSecure2026!`)*
 
 ### 4. Run Automated Tests
 ```bash
@@ -81,3 +83,5 @@ npm start
 - [ARCHITECTURE.md](file:///c:/Users/raval/Desktop/rndtechnosoft/diwali-assignment-2/ARCHITECTURE.md): System architecture, data models, and sequence diagram.
 - [AI_LOG.md](file:///c:/Users/raval/Desktop/rndtechnosoft/diwali-assignment-2/AI_LOG.md): Log of AI prompts, mistake detection, and corrections.
 - [AGENT_1_REPORT.md](file:///c:/Users/raval/Desktop/rndtechnosoft/diwali-assignment-2/AGENT_1_REPORT.md): Foundation and Visitor Panel completion report.
+- [AGENT_2_REPORT.md](file:///c:/Users/raval/Desktop/rndtechnosoft/diwali-assignment-2/AGENT_2_REPORT.md): Live Slideshow TV Panel completion report.
+- [AGENT_3_REPORT.md](file:///c:/Users/raval/Desktop/rndtechnosoft/diwali-assignment-2/AGENT_3_REPORT.md): Admin Dashboard and Governance completion report.

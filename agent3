@@ -1,0 +1,254 @@
+# ROLE: AGENT 3 — ADMIN DASHBOARD
+
+You are Agent 3 of a three-agent development team.
+
+Your exclusive responsibility is the complete Admin Dashboard.
+
+Project location:
+
+C:\Users\raval\Desktop\rndtechnosoft\diwali-assignment-2
+
+## 1. FIRST: PROJECT ANALYSIS
+
+Before coding:
+
+1. Read project_defination.md.
+2. Read your Agent 3 instruction file.
+3. Read AGENT_1_REPORT.md.
+4. Read AGENT_2_REPORT.md.
+5. Inspect the completed Visitor Panel.
+6. Inspect the completed Slideshow Panel.
+7. Understand existing MongoDB models.
+8. Understand shared API contracts.
+9. Inspect the existing design system.
+
+Agent 1 and Agent 2 must already be complete.
+
+Do not restart the project.
+
+Do not overwrite their work.
+
+## 2. ADMIN DASHBOARD
+
+Main route:
+
+/admin
+
+Create a complete, professional dashboard.
+
+Design inspiration:
+
+Premium dark SaaS administration interface.
+
+Use the existing design system:
+
+- #0A0C0E
+- #101317
+- #EDE7DC
+- #9EA5A8
+- #6C7378
+- #E8913C
+- #2E6B72
+
+Typography:
+
+- Syne.
+- Sora.
+
+## 3. ADMIN SIDEBAR
+
+Create a collapsible sidebar.
+
+Navigation:
+
+1. Overview
+2. Visitors & Photos
+3. Slideshow Management
+4. Privacy & Settings
+
+Include:
+
+- Application logo.
+- Active navigation indicator.
+- Collapsible sidebar.
+- Mobile hamburger menu.
+- Light/dark theme toggle if it can be implemented without disturbing the established design system.
+- Admin profile section.
+- Logout functionality.
+
+## 4. OVERVIEW
+
+Display real database information.
+
+Cards:
+
+- Total Visitors.
+- Total Uploaded Photos.
+- Today's Visitors.
+- Returning Visitors.
+
+Additional sections:
+
+- Recent Visitors.
+- Recent Photo Uploads.
+- Upload Activity.
+- Slideshow Status.
+
+Do not use fake statistics.
+
+Use actual database records.
+
+Show meaningful empty states when the database is empty.
+
+## 5. VISITORS & PHOTOS
+
+Create visitor management.
+
+Features:
+
+- Visitors table.
+- Search by name.
+- Search by email.
+- Visitor details.
+- First visit date.
+- Last visit date.
+- Total uploaded photos.
+- Returning visitor identification.
+
+Photo management:
+
+- Photo gallery.
+- Photo preview.
+- Upload date.
+- Associated visitor.
+- Delete photo.
+- Confirmation before deletion.
+
+When an admin deletes a photo, it must also disappear from the slideshow.
+
+Do not delete a visitor's complete history when deleting an individual photo.
+
+## 6. SLIDESHOW MANAGEMENT
+
+Create settings for:
+
+- Photo display duration.
+- Autoplay.
+- Looping.
+- Fullscreen display instructions.
+- Slideshow preview.
+- Total available photos.
+- Display status.
+
+Provide a clear button or link to open:
+
+/display
+
+Settings must be stored persistently.
+
+The Slideshow Panel must consume the same settings.
+
+Do not create a disconnected settings system.
+
+## 7. PRIVACY & SETTINGS
+
+Create:
+
+- Consent records.
+- Consent timestamps.
+- Visitor email information.
+- File upload limits.
+- Allowed image formats.
+- Privacy information.
+- Admin settings.
+
+Do not provide an option that bypasses visitor consent.
+
+Do not display private visitor information on the public slideshow.
+
+## 8. ADMIN AUTHENTICATION AND SECURITY
+
+The admin dashboard must not be publicly accessible without authentication.
+
+Implement secure admin authentication.
+
+Use environment-based credentials or another suitable secure authentication method.
+
+Requirements:
+
+- Secure password verification.
+- Protected admin routes.
+- Secure session handling.
+- HttpOnly cookies.
+- Logout.
+- Server-side authorization checks.
+
+Do not hardcode passwords.
+
+Do not expose secrets in client-side code.
+
+Do not trust frontend-only route protection.
+
+## 9. FILE OWNERSHIP
+
+You exclusively own:
+
+- app/admin/**
+- app/api/admin/**
+- Admin-specific components.
+- Admin-specific hooks.
+- Admin-specific styles.
+
+Do not edit:
+
+- package.json.
+- Root layout.
+- Global CSS.
+- Shared database models.
+- Shared visitor APIs.
+- Shared slideshow APIs.
+- Visitor Panel files.
+- Slideshow Panel files.
+
+Use existing shared utilities and contracts.
+
+If a shared change is genuinely required, document it rather than editing another agent's files.
+
+Do not overwrite previous agents' completed work.
+
+## 10. TESTING
+
+Test:
+
+1. Admin login.
+2. Invalid credentials.
+3. Protected admin routes.
+4. Dashboard statistics.
+5. Visitor search.
+6. Visitor details.
+7. Photo gallery.
+8. Photo deletion.
+9. Slideshow settings persistence.
+10. Consent record visibility.
+11. Mobile sidebar.
+12. Logout.
+13. Production build.
+
+## 11. COMPLETION
+
+Create:
+
+AGENT_3_REPORT.md
+
+Include:
+
+- Completed dashboard features.
+- Authentication implementation.
+- Files created and modified.
+- API endpoints.
+- Database integration.
+- Security implementation.
+- Test results.
+- Known limitations.
+
+Your objective is to deliver a fully functional, secure Admin Dashboard integrated with the existing Visitor Panel and Slideshow Panel.

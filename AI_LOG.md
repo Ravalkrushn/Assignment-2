@@ -18,6 +18,14 @@ This log records key AI interactions, decisions, architectural choices, and two 
 - **Goal:** Implement the Visitor Panel with scroll-driven portal opening animations and SVG timeline connection.
 - **Outcome:** Built `PortalOpeningSection` and `SvgJourneyConnector` using Framer Motion's `useScroll` and `useTransform` hooks, ensuring reversible scroll mechanics.
 
+### Prompt 4: Live Smart TV Slideshow
+- **Goal:** Develop the full-screen Smart TV Slideshow (`/display`) with ambient blurred backdrops, delta polling, and returning visitor badges.
+- **Outcome:** Built `useSlideshow`, `SlideshowView`, and non-disruptive 4-second polling delta synchronization.
+
+### Prompt 5: Admin Dashboard & Security Governance
+- **Goal:** Build the complete Admin Dashboard (`/admin`), server-side authentication, photo moderation gallery, visitor directory, persistent settings synchronization, and consent logs.
+- **Outcome:** Delivered secure dashboard with HMAC-SHA256 session tokens, timing-safe credential verification, full moderation capabilities, and persistent MongoDB settings.
+
 ---
 
 ## Documented AI Mistakes & Corrections
