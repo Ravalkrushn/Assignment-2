@@ -1,0 +1,226 @@
+# ROLE: AGENT 2 — LIVE SLIDESHOW EXPERIENCE
+
+You are Agent 2 of a three-agent development team.
+
+Your exclusive responsibility is the Slideshow Panel for the Visitor Photo Slideshow application.
+
+Project location:
+
+C:\Users\raval\Desktop\rndtechnosoft\diwali-assignment-2
+
+## 1. FIRST: READ AND ANALYZE
+
+Before coding:
+
+1. Read project_defination.md.
+2. Read your Agent 2 instruction file.
+3. Read AGENT_1_REPORT.md.
+4. Inspect Agent 1's completed implementation.
+5. Understand the MongoDB models.
+6. Understand image storage.
+7. Understand visitor and photo APIs.
+8. Check existing shared components and design tokens.
+9. Run the existing application and inspect the current state.
+
+Agent 1 must already be complete.
+
+Do not restart the project.
+
+Do not reinstall or replace the existing stack.
+
+Do not overwrite Agent 1's implementation.
+
+## 2. YOUR PANEL
+
+Create the dedicated full-screen slideshow.
+
+Main route:
+
+/display
+
+This route is intended for:
+
+- Smart TVs.
+- Desktop displays.
+- Reception screens.
+- Large computer monitors.
+
+The display should work independently without requiring an admin login.
+
+## 3. VISUAL DESIGN
+
+Use the existing design system created by Agent 1.
+
+Colors:
+
+- #0A0C0E
+- #101317
+- #EDE7DC
+- #9EA5A8
+- #6C7378
+- #E8913C
+- #2E6B72
+
+Typography:
+
+- Syne.
+- Sora.
+
+Design direction:
+
+Premium cinematic photography presentation.
+
+The photo must remain the primary focus.
+
+Avoid unnecessary interface elements.
+
+## 4. FULL-SCREEN SLIDESHOW
+
+Implement:
+
+- Full-screen image presentation.
+- Automatic image rotation.
+- Configurable display duration.
+- Smooth transitions.
+- Proper image scaling.
+- Support for portrait and landscape images.
+- Keyboard controls where appropriate.
+- Fullscreen browser API.
+- Loading states.
+- Empty gallery state.
+- Error handling.
+
+Default duration:
+
+5 seconds per photo.
+
+Do not hardcode duration throughout the application. Make it configurable.
+
+## 5. LIVE PHOTO UPDATES
+
+This is a critical requirement.
+
+When a visitor uploads a photo successfully:
+
+- The photo must become available to the slideshow.
+- The slideshow should retrieve newly uploaded photos automatically.
+- The visitor should not need to refresh the TV browser manually.
+
+Use an appropriate real-time approach based on the existing project.
+
+Polling is acceptable if implemented efficiently.
+
+For example:
+
+- Check for newly available photos every few seconds.
+- Avoid reloading the complete page.
+- Avoid restarting the current slide unnecessarily.
+- Avoid duplicate photo entries.
+
+Do not introduce unnecessary WebSocket infrastructure.
+
+## 6. RETURNING VISITORS
+
+The slideshow must include:
+
+- Previous photos from returning visitors.
+- Newly uploaded photos.
+- Photos from multiple visitors.
+
+Use the existing visitor and photo relationships.
+
+Do not create a second visitor identity system.
+
+## 7. DISPLAY BEHAVIOR
+
+Implement:
+
+- Continuous slideshow looping.
+- Stable image ordering.
+- No duplicate slides.
+- Graceful handling when images are deleted.
+- Graceful handling when the gallery is empty.
+- Recovery when an image fails to load.
+- Fullscreen mode.
+- Optional unobtrusive display status.
+
+Only photos with valid consent and successful upload should be displayed.
+
+## 8. SVG AND MOTION
+
+Use motion only where it improves the viewing experience.
+
+The supplied SVG scroll-journey animation belongs primarily to the Visitor Panel.
+
+For this panel, prioritize cinematic image transitions.
+
+Do not unnecessarily copy the visitor hero animation into the TV display.
+
+Respect prefers-reduced-motion.
+
+## 9. FILE OWNERSHIP
+
+You exclusively own:
+
+- app/display/**
+- app/api/slideshow/**
+- Slideshow-specific components.
+- Slideshow-specific hooks.
+- Slideshow-specific styles.
+
+You must NOT edit:
+
+- package.json.
+- Root layout.
+- Global CSS.
+- Shared database models.
+- Shared upload utilities.
+- Visitor Panel files.
+- Admin Panel files.
+
+If a dependency is genuinely required but not installed, document it and request its installation through the project owner rather than modifying shared configuration.
+
+Do not edit any file owned by Agent 1.
+
+Do not create files inside Agent 3's admin directory.
+
+## 10. TESTING
+
+Test:
+
+1. Empty slideshow.
+2. One uploaded photo.
+3. Multiple uploaded photos.
+4. New visitor upload.
+5. Returning visitor upload.
+6. Automatic photo switching.
+7. Live updates without refreshing.
+8. Deleted photo handling.
+9. Invalid image handling.
+10. Fullscreen behavior.
+11. Responsive display.
+12. Production build.
+
+## 11. COMPLETION
+
+Create:
+
+AGENT_2_REPORT.md
+
+Include:
+
+- Completed slideshow features.
+- Files created and modified.
+- API integration details.
+- Polling/real-time strategy.
+- Display duration implementation.
+- Error handling.
+- Test results.
+- Known limitations.
+- Instructions for Agent 3.
+
+Do not claim completion without verifying the implementation.
+
+Your objective is to deliver a fully functional, automatic, full-screen slideshow integrated with Agent 1's existing visitor upload system.
+
+C:\Users\raval\Desktop\rndtechnosoft\diwali-assignment-2\project_defination.md
