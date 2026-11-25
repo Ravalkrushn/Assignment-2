@@ -102,7 +102,7 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({ onStartClick }) => {
             {/* Inner Portrait Image Container */}
             <div className="relative w-full h-full overflow-hidden bg-[#0A0C0E]">
               <Image
-                src="/images/hero-portrait.jpg"
+                src="/images/PROFILE_PHOTO.jpeg"
                 alt="Visitor Exhibition Editorial Portrait"
                 fill
                 priority
@@ -120,7 +120,7 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({ onStartClick }) => {
                     LIVE CURATION
                   </span>
                   <span className="text-primary-text font-syne text-[11px] font-semibold">
-                    FRAME #082 // ARCHIVE
+                    krushn raval - MCA student
                   </span>
                 </div>
 
